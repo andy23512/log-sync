@@ -4,6 +4,7 @@ node_modules/
 npm-debug.log
 dist/
 port
+socket-port
 webpack-stats.json
 db.sqlite3
 website/gmail_account.py

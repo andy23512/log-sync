@@ -1,7 +1,10 @@
 astroid==1.4.9
+certifi==2018.1.18
+chardet==3.0.4
 Django==1.10.5
 django-lint==2.0.4
 django-webpack-loader==0.4.1
+idna==2.6
 isort==4.2.5
 lazy-object-proxy==1.2.2
 logilab-astng==0.24.3
@@ -10,9 +13,13 @@ mccabe==0.5.3
 pbr==1.10.0
 pyjade==4.0.0
 pylint==1.6.4
-six==1.10.0
+requests==2.18.4
+six==1.11.0
+socketIO-client-nexus==0.7.6
 stevedore==1.17.0
+urllib3==1.22
 virtualenv==15.0.2
 virtualenv-clone==0.2.6
 virtualenvwrapper==4.7.1
+websocket-client==0.47.0
 wrapt==1.10.8
