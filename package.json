@@ -1,0 +1,44 @@
+{
+  "name": "django-webpack-pack",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack -p",
+    "lint:djg": "django-lint **/*.py",
+    "lint:ls": "ls-lint app/*.ls webpack.config.ls",
+    "lint:py": "pylint *.py **/*.py",
+    "lint:styl": "stylint app/",
+    "django": "./manage.py runserver 0.0.0.0:$(/bin/cat port || /bin/echo 8000)",
+    "start": "webpack --watch"
+  },
+  "license": "All rights reserved",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andy23512/django-webpack-pack"
+  },
+  "author": {
+    "name": "andy23512",
+    "email": "andy23512@gmail.com"
+  },
+  "private": false,
+  "dependencies": {
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "^2.0.0-beta",
+    "file-loader": "^0.10.0",
+    "gulp": "^3.9.1",
+    "jquery": "^3.1.1",
+    "jquery-form": "^3.50.0",
+    "livescript": "^1.5.0",
+    "livescript-loader": "^0.1.6",
+    "nib": "^1.1.2",
+    "semantic-ui-css": "^2.2.4",
+    "style-loader": "^0.13.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.4.0",
+    "webpack": "^2.2.1",
+    "webpack-bundle-tracker": "^0.2.0"
+  },
+  "devDependencies": {
+    "ls-lint": "^0.1.2",
+    "stylint": "^1.5.9"
+  }
+}
