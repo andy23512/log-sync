@@ -9,6 +9,7 @@ from .models import Process
 def index(request):
     return render(request, 'main/index.jade')
 
+
 def start_process(request):
     with open('./socket-port') as f:
         socket_port = int(f.readline())
