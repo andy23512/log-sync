@@ -13,3 +13,4 @@ def random_key():
 
 class Process(models.Model):
     pid = models.CharField(max_length=16, default=random_key, primary_key=True)
+    done = models.BooleanField(default=False)
