@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from viewer.models import DLTrain
+from main.models import Process
 
 
 class Command(BaseCommand):
@@ -9,6 +9,6 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         pid = options['pid'][0]
-        p = DLTrain.objects.get(pid=pid)
+        p = Process.objects.get(pid=pid)
         p.done = True
         p.save()

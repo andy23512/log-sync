@@ -21,6 +21,7 @@
   },
   "private": false,
   "dependencies": {
+    "console-log-div": "^0.6.3",
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^2.0.0-beta",
     "file-loader": "^0.10.0",

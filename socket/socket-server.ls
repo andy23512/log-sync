@@ -3,6 +3,9 @@ port = parseInt fs.read-file-sync \socket-port
 io = require(\socket.io)(port)
 dl-process = {}
 
+function getUserHome
+  return process.env[if process.platform is \win32 then \USERPROFILE else \HOME]
+
 io.on \connection (socket) ->
   socket.on 'start_process' (job) !->
     return if not job
@@ -15,13 +18,15 @@ io.on \connection (socket) ->
       p.stderr.on \data, log .pipe log-stream
       p.on \close (code) -> if code isnt 1 then next!
     run './node_modules/.bin/lsc' ['random.ls'], {}, ->
-      console.log \nanoha
+      console.log \fate
+      run "#{getUserHome!}/.virtualenvs/log-sync/bin/python" ['./manage.py', 'dl_finish', pid], {}, ->
+        console.log pid, \nanoha
   socket.on 'listen_process' (job) !->
     return if not job
     pid = job.pid
     if dl-process[pid]
       @join pid
-      fs.read-file "./tmp/#pid.log" encoding: \utf8 (err, data) ->
+      fs.read-file "./tmp/#pid.log" {encoding: \utf8} (err, data) ->
         throw err if err
         socket.emit \history-log data
 

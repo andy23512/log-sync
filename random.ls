@@ -5,5 +5,5 @@ interval = setInterval ( ->
   else
     console.log \nanoha
 ), 500
-<- setTimeout _, 10000
+<- setTimeout _, 30000
 clearInterval interval

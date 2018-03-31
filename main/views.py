@@ -17,3 +17,8 @@ def start_process(request):
     with SocketIO('localhost', socket_port, LoggingNamespace) as socketIO:
         socketIO.emit('start_process', {'pid': p.pid})
     return JsonResponse({'pid': p.pid})
+
+
+def processing_processes(request):
+    processing_processes = Process.objects.filter(done=False).values('pid')
+    return JsonResponse({'data': [p['pid'] for p in processing_processes]})
